@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Little World for Archu</title>
+<style>
+:root{--sky:#dceffc;--blue:#8fc4e8;--ink:#355a76;--white:#fbfdff;--line:#c4e1f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#d9efff,#f7fcff 48%,#e5f4ff);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+.cloud{position:fixed;z-index:-1;opacity:.52;background:#fff;border-radius:100px;filter:blur(1px);width:180px;height:55px}.cloud:before,.cloud:after{content:'';position:absolute;background:#fff;border-radius:50%;}.cloud:before{width:75px;height:75px;left:25px;top:-35px}.cloud:after{width:90px;height:90px;right:20px;top:-45px}.c1{top:12%;left:-65px}.c2{top:58%;right:-75px;transform:scale(.8)}
+header{position:sticky;top:0;z-index:5;background:#f7fcffe8;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 12px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}header a{color:#47799b;text-decoration:none;font:600 12px Arial;padding:8px 10px;border-radius:20px}header a:hover{background:#e1f2ff}
+main{max-width:760px;margin:auto;padding:22px 16px 60px}.page{min-height:72vh;display:flex;align-items:center;justify-content:center;padding:24px 0;scroll-margin-top:70px}.card{width:100%;background:#ffffffdf;border:1px solid #c5e1f3;border-radius:26px;padding:clamp(22px,5vw,42px);box-shadow:0 12px 35px #7daecc20;text-align:center}.eyebrow{font:12px Arial;letter-spacing:2px;text-transform:uppercase;color:#79a8c7}h1{font-size:clamp(34px,8vw,56px);line-height:1.08;margin:12px 0;color:#477da4}h2{font-size:clamp(27px,6vw,38px);margin:8px 0 18px;color:#477da4}p{font-size:17px;line-height:1.75}.butterfly{font-size:28px}.btn{display:inline-block;border:0;border-radius:24px;padding:12px 22px;margin:8px 4px;background:#8fc4e8;color:white;font-weight:bold;font-size:14px;text-decoration:none;cursor:pointer}.btn.secondary{background:#eef8ff;color:#477da4;border:1px solid #c5e1f3}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.photo{margin:0;background:#fff;padding:9px;border-radius:17px;box-shadow:0 5px 18px #7daecc20}.photo img{width:100%;height:260px;object-fit:cover;border-radius:11px;display:block}.photo figcaption{padding:10px 4px 4px;font-size:14px;line-height:1.4}.fun-options{display:grid;gap:10px;margin:20px auto;max-width:440px}.fun-options button{background:#fff;border:1px solid #c8dfc1;border-radius:15px;padding:14px;color:#587653;font-size:16px;text-align:left;cursor:pointer}.reply{min-height:55px;margin:15px auto;padding:12px;border-radius:14px;background:#fff;color:#587653;max-width:440px;line-height:1.5}.letter{text-align:left;white-space:pre-line;line-height:1.85;font-size:16px}.birthday{text-align:left;white-space:pre-line;line-height:1.8;font-size:16px}.envelope{font-size:64px;cursor:pointer;background:none;border:0}.hidden{display:none}.small{font:12px Arial;color:#7b9bb2}.footer{text-align:center;color:#7298b2;padding:20px;font-size:13px}
+@media(max-width:520px){.gallery{grid-template-columns:1fr 1fr}.photo img{height:210px}header a{padding:7px 8px;font-size:11px}.card{border-radius:20px}}
+</style></head>
+<body><div class="cloud c1"></div><div class="cloud c2"></div>
+<header><a href="#welcome">Welcome</a><a href="#gallery">Gallery</a><a href="#ruddy">Little Fun</a><a href="#note">Just for You</a><a href="#surprise">Surprise</a></header>
+<main>
+<section class="page" id="welcome"><div class="card"><div class="butterfly">☁️ 🦋 ☁️</div><div class="eyebrow">A little birthday world</div><h1>A Little World<br>for Archu 🦋</h1><p>A little place filled with smiles, memories, silly moments and a few surprises… made just for you!</p><a class="btn" href="#gallery">Let's Begin →</a><div class="butterfly">🦋</div></div></section>
+<section class="page" id="gallery"><div class="card"><div class="eyebrow">A few favourite faces</div><h2>Little Moments 📸</h2><div class="gallery">
+<figure class="photo"><img src="assets/archu-festive.jpg" alt="Archu in a festive outfit"><figcaption>A little desi sparkle ✨</figcaption></figure>
+<figure class="photo"><img src="assets/archu-blue.jpg" alt="Archu in blue"><figcaption>A little moment in her own world 💙</figcaption></figure>
+<figure class="photo"><img src="assets/archu-traditional.jpg" alt="Archu in a traditional outfit"><figcaption>Some moments deserve their own frame 🌷</figcaption></figure>
+<figure class="photo"><img src="assets/ruddy-lap.jpg" alt="Ruddy relaxing in a lap"><figcaption>The little troublemaker 🐾</figcaption></figure>
+</div><a class="btn" href="#ruddy">Next →</a></div></section>
+<section class="page" id="ruddy"><div class="card" style="background:#f7fbf4;border-color:#d8e9d2"><div class="butterfly">🐾</div><div class="eyebrow">Ruddy's corner</div><h2 style="color:#65845d">Ruddy Has a Question!</h2><p>Agar Ruddy bol sakta, toh sabse pehle tumse kya kehta?</p><div class="fun-options">
+<button onclick="reply('treat')">🦴 Mujhe treat do!</button><button onclick="reply('play')">🐾 Mere saath khelo!</button><button onclick="reply('phone')">😂 Phone side mein rakho!</button><button onclick="reply('trouble')">😭 Tum phir se mujhe pareshan kar rahi ho?</button></div><div class="reply" id="reply">Ek option choose karo, maate! 😄</div><a class="btn" href="#note">Next →</a></div></section>
+<section class="page" id="note"><div class="card" style="background:#fbf9ff;border-color:#e5daf5"><div class="butterfly">🌷🦋</div><div class="eyebrow">A little note, just for you</div><h2 style="color:#8269a2">Just for You</h2><div class="letter">ये तुम्हारे लिए, मिस देवी जी… 🌷🦋
+
+आज कलम उठाई तो ख़याल आया, क्यों न आज तुम्हारा ज़िक्र किया जाए, कुछ चाँद-सितारों की बातें हों, कुछ तुम्हारी शरारतों को लिखा जाए।
+
+तुम्हें चाँद लिखूँ या रातों का ख़्वाब लिखूँ, महकता हुआ कोई गुलाब लिखूँ, या तुम्हारी उन नादानियों का हिसाब लिखूँ, जो कभी हँसा देती हैं, तो कभी सोचने पर मजबूर कर देती हैं कि आख़िर इतनी नटखट कोई कैसे हो सकता है!
+
+तुम्हारी हँसी का ज़िक्र करूँ, तो लगता है मुरझाए फूल भी खिल उठेंगे, और जो कभी तुम उदास हो जाओ, तो बेचारे मौसम के भी चेहरे उतर जाएँगे।
+
+तुम्हारी बातें लिखूँ तो अल्फ़ाज़ मुस्कुराने लगते हैं, तुम्हारी शरारतें लिखूँ तो क़िस्से बनने लगते हैं, और तुम्हें लिखने बैठूँ तो न जाने क्यों, मेरे सारे अल्फ़ाज़ छोटे पड़ने लगते हैं।
+
+अब इससे ज़्यादा क्या लिखूँ तुम्हारे बारे में, तुम थोड़ी नादान, थोड़ी शरारती, मगर बेहिसाब प्यारी हो… और हाँ, अपनी ये मुस्कान हमेशा बनाए रखना, क्योंकि तुम्हारी हँसी तुम पर बहुत जँचती है। 🤍</div><a class="btn" href="#surprise">One Last Thing →</a></div></section>
+<section class="page" id="surprise"><div class="card" style="background:#fffaf0;border-color:#f3e4bf"><div class="eyebrow">The last little surprise</div><h2 style="color:#a27c3f">A Little Birthday Surprise 🎂</h2><p style="color:#9b7a49">A little surprise is waiting for you…</p><button class="envelope" onclick="openWish()" aria-label="Open birthday message">💌</button><p class="small">Tap the envelope to open</p><div id="wish" class="hidden birthday">Happy Birthday, Archu! 🤍🦋
+
+I hope tumhara aane wala saal chhoti-chhoti khushiyon se bhara ho —random laughter, tasty food, naye adventures, peaceful days, aur aise moments jinhe yaad karke baad mein bhi smile aa jaayein.
+
+I hope tumhe woh sab try karne ke chances milein jo tum karna chahti ho, aur beech-beech mein rest karne aur bas present moment enjoy karne ka time bhi.
+
+Khush raho, apne tareeke se aur apni pace par. May life surprise you with lovely little things. 🌷
+
+Made with care, just for you. ♡</div></div></section>
+<div class="footer">Made with care, just for you. ♡</div>
+</main>
+<script>
+function reply(which){const r={treat:'Bas! Aaj diet-viet ki baatein nahi, pehle meri treat! 🦴',play:'Tumhara free time officially mera hai! 🐾',phone:'Screen ko itna kya dekhna, idhar bhi ek handsome face hai! 😂',trouble:'Main ghar ka pet hoon, tumhara stress ball nahi! 😭'};document.getElementById('reply').textContent=r[which]}
+function openWish(){document.getElementById('wish').classList.remove('hidden');document.querySelector('.envelope').textContent='💌';}
+</script></body></html>
